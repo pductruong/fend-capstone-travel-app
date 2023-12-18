@@ -4,7 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "node src/server/index.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "automock": false,
+    "setupFiles": [
+      "./__test__/jest.config.js"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -40,5 +50,3 @@
     "workbox-webpack-plugin": "^7.0.0"
   }
 }
-
-
